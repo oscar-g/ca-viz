@@ -1,0 +1,38 @@
+{
+  "name": "genetic-game-of-life",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-option": "^1.1.4",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^5.2.4",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.0-rc.5",
+    "@vue/cli-plugin-typescript": "^3.0.0-rc.5",
+    "@vue/cli-plugin-unit-mocha": "^3.0.0-rc.5",
+    "@vue/cli-service": "^3.0.0-rc.5",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "chai": "^4.1.2",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-node": "^6.1.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.1",
+    "vue-template-compiler": "^2.5.16"
+  }
+}
