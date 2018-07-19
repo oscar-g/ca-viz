@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
 import Grid from '@/components/Grid.vue';
+import Theme from '@/interfaces/Theme';
 
 const defaultData: Uint8Array[] = [
   Uint8Array.from([0, 1, 0, 1]),
@@ -10,7 +11,20 @@ const defaultData: Uint8Array[] = [
 ];
 
 const defaultOpts = {
-  propsData: { data: defaultData },
+  propsData: {
+    data: defaultData,
+
+  },
+};
+
+const testTheme: Theme= {
+  cellSize: 16,
+  cellColor: {
+    0: 'red',
+    1: 'green',
+  },
+  gridBackgroundColor: '',
+  gridlineColor: '#000',
 };
 
 const getValueCounts = (data: Uint8Array[]): { [v: string]: number } =>
@@ -29,17 +43,12 @@ const getValueCounts = (data: Uint8Array[]): { [v: string]: number } =>
 describe('Grid.vue', () => {
   it('renders an svg', () => {
     const wrapper = shallowMount(Grid, defaultOpts);
-    expect(wrapper.findAll('.row').length).eq(defaultData.length);
-  });
-
-  it('renders all data rows', () => {
-    const wrapper = shallowMount(Grid, defaultOpts);
-    expect(wrapper.findAll('.row').length).eq(defaultData.length);
+    expect(wrapper.findAll('svg').length).eq(1);
   });
 
   it('renders all data cells', () => {
     const wrapper = shallowMount(Grid, defaultOpts);
-    expect(wrapper.findAll('.row .cell').length).eq(defaultData.length ** 2);
+    expect(wrapper.findAll('svg .c').length).eq(defaultData.length ** 2);
   });
 
   it('renders a "data-state" attribute on each cell', () => {
@@ -48,6 +57,24 @@ describe('Grid.vue', () => {
 
     Object.keys(valueCount).forEach( (value) => {
       expect(wrapper.findAll(`[data-state="${value}"]`).length).eq(valueCount[value]);
+    });
+  });
+
+  it('color cells, according to numeric state of cell and theme', () => {
+    const valueCount = getValueCounts(defaultData);
+    const propsData = {
+      ...defaultOpts.propsData,
+      theme: testTheme,
+    };
+
+    const wrapper = shallowMount(Grid, {
+      ...defaultOpts,
+      propsData,
+    });
+
+    Object.keys(valueCount).forEach( (value) => {
+      expect(wrapper.findAll(`[fill="${propsData.theme.cellColor[Number(value)]}"]`).length)
+        .eq(valueCount[value]);
     });
   });
 });
