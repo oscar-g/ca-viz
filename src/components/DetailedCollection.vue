@@ -1,8 +1,9 @@
 <template lang="pug">
-  .fig
-    .fighead(v-if="title"): FigureHeader(v-bind:title="title")
-    .figviz: Grid(v-bind:data="data", v-bind:theme="theme")
-    .figcap(v-if="caption"): FigureCaption(v-bind="caption")
+  .col
+    .colhead: FigureHeader(v-bind:title="title")
+    .colviz: .colfig(v-for="figure in figures")
+      Grid(v-bind:data="figure.data", v-bind:theme="theme")
+      FigureCaption(v-bind="figure.caption")
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -18,13 +19,12 @@ import Theme from './../interfaces/Theme';
     Grid,
   },
 })
-export default class Figure extends Vue {
-  @Prop() private data!: Uint8Array[];
+export default class DetailedCollection extends Vue {
+  @Prop() private figures!: {
+    data: Uint8Array[],
+    meta: {},
+  }[];
+  @Prop() private title!: string;
   @Prop() private theme?: Theme;
-  @Prop() private title?: string;
-  @Prop() private caption?: {
-    name: string,
-    info: string,
-  };
 }
 </script>

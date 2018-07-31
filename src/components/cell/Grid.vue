@@ -10,7 +10,8 @@
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Theme from './../interfaces/Theme';
+import Theme from './../../interfaces/Theme';
+import themes from './../../themes';
 
 @Component
 export default class Grid extends Vue {
@@ -18,16 +19,7 @@ export default class Grid extends Vue {
 
   @Prop({
     type: Object,
-    default: (): Theme => ({
-      cellSize: 16,
-      cellColor: {
-        0: '#fff',
-        1: '#000',
-      },
-      gridlineColor: '#000',
-      borderWidth: 1,
-      borderColor: '#000',
-    }),
+    default: (): Theme => themes.classic,
   }) public theme!: Theme;
 
   get cellSize(): number {
@@ -96,10 +88,10 @@ export default class Grid extends Vue {
     }) : {};
 
     return Object.assign(line, mod, {
-      fill: 'none',
-      width: this.totalWidth,
-      height: this.totalWidth,
-      stroke: this.theme.borderColor,
+      'fill': 'none',
+      'width': this.totalWidth,
+      'height': this.totalWidth,
+      'stroke': this.theme.borderColor,
       'stroke-width': this.theme.borderWidth * 2,
     });
   }

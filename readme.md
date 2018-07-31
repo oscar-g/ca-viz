@@ -1,15 +1,20 @@
 # cell-viz
 
+Vue components to consistently render 2-dimensional cell automata.
+
 ## Components
 
 ### Figure
-Displays a single 2-dimensional cell grid
+Renders a matrix of integers into a 2-dimensional grid of cells (figure). Optional title and caption (metadata).
 
-### FigureGrid (todo)
-Displays multiple figures
+### SimpleCollection
+Displays multiple figures, grouped under the same metadata.
 
-### FigureCarusel (todo)
-Displays pages of figures
+### DetailedCollection
+Same as SimpleCollection, but uses individual captions for each figure.
 
-### FigureAnimation (todo)
-Displays a single, animated, 2-dimensional cell grid
+### AnimatedFigure (todo)
+An animated figure
+
+### AnimatedCollection (todo)
+An animated collection

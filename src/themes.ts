@@ -22,6 +22,5 @@ const classic: Theme = {
   borderColor: '#000',
 };
 
-export default {
-  classic, rgb,
-};
+export default { classic, rgb };
+export { classic, rgb };
