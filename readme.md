@@ -3,10 +3,13 @@
 ## Components
 
 ### Figure
-Displays a single grid
+Displays a single 2-dimensional cell grid
 
-### FigureGrid
-Displays many figures
+### FigureGrid (todo)
+Displays multiple figures
 
-### FigureCarusel
+### FigureCarusel (todo)
 Displays pages of figures
+
+### FigureAnimation (todo)
+Displays a single, animated, 2-dimensional cell grid
