@@ -1,7 +1,7 @@
 <template lang="pug">
-  .caption
-    .name {{ name }}
-    .info(v-if="info") {{ info }}
+  p.caption
+    span.name {{ name }}
+    span.info(v-if="info") {{ info }}
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -16,10 +16,8 @@ export default class FigureCaption extends Vue {
 <style lang="stylus">
   .caption
     font-size small
-    padding 0.25em 0 0
-
-    & > *
-      display inline-block
+    line-height 1
+    margin 0.5em 0 0.5em 0
 
   .name
     &, &::after
