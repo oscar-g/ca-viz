@@ -15,7 +15,9 @@ export default class FigureCaption extends Vue {
 
 <style lang="stylus">
   .caption
-  
+    font-size small
+    padding 0.25em 0 0
+
     & > *
       display inline-block
 

@@ -10,3 +10,9 @@ export default class FigureHeader extends Vue {
   @Prop() private title!: string;
 }
 </script>
+<style lang="stylus" scoped>
+.header
+  font-size large
+  margin 0 0 1em
+  line-height 1.5
+</style>

@@ -20,11 +20,11 @@ import Theme from './../interfaces/Theme';
 })
 export default class Figure extends Vue {
   @Prop() private data!: Uint8Array[];
+  @Prop() private theme?: Theme;
+  @Prop() private title?: string;
   @Prop() private caption!: {
     name: string,
     info: string,
   };
-  @Prop() private theme?: Theme;
-  @Prop() private title?: string;
 }
 </script>
