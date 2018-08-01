@@ -1,6 +1,6 @@
 {
   "name": "ca-viz",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
     "build": "vue-cli-service build --target lib src/components/**/*",
@@ -14,7 +14,8 @@
   },
   "license": "MIT",
   "files": [
-    "src", "dest"
+    "src",
+    "dest"
   ],
   "dependencies": {},
   "devDependencies": {
