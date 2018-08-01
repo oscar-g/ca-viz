@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ca-viz docs</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="dist/ca-viz.umd.min.js"></script>
+    <link rel="stylesheet" href="dist/ca-viz.css">
+</head>
+<body>
+    <noscript>
+        <strong>We're sorry but ca-viz docs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="example-figure">
+        <fig v-bind="fig1"/>
+    </div>
+    <script>
+        var themes = window["ca-viz"].themes;
+        var components = window["ca-viz"].components;
+
+        new Vue({
+            el: '#example-figure',
+            components: {
+                fig: components.Figure,
+            },
+            data: {
+                fig1: {
+                    theme: themes.classic,
+                    title: 'A simple Figure',
+                    caption: {
+                        name: 'Figure 1',
+                        info: 'abc',
+                    },
+                    data: getData(7),
+                },
+            },
+        });
+
+        function getData(size) {
+            var data = [];
+
+            for (var a = 0; a < size; a++) {
+                var bits = new Uint8Array(size);
+                for (var b = 0; b < size; b++) {
+                    bits[b] = Math.round(Math.random());
+                }
+                data.push(bits);
+            }
+
+            return data;
+        }
+    </script>
+</body>
+</html>

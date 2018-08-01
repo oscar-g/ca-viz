@@ -20,10 +20,10 @@ import Theme from './../interfaces/Theme';
   },
 })
 export default class DetailedCollection extends Vue {
-  @Prop() private figures!: {
+  @Prop() private figures!: Array<{
     data: Uint8Array[],
     meta: {},
-  }[];
+  }>;
   @Prop() private title!: string;
   @Prop() private theme?: Theme;
 }
