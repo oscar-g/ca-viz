@@ -6,15 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ca-viz docs</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="dist/ca-viz.umd.min.js"></script>
-    <link rel="stylesheet" href="dist/ca-viz.css">
+    <script src="ca-viz.umd.min.js"></script>
+    <script src="https://unpkg.com/lorem.js@1.0.2/lorem.min.js"></script>
+    <link rel="stylesheet" href="ca-viz.css">
 </head>
 <body>
     <noscript>
         <strong>We're sorry but ca-viz docs doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="example-figure">
-        <fig v-bind="fig1"/>
+        <div>
+            <fig v-bind="fig1"/>
+        </div>
+        <hr>
+        <div>
+            <simple-collection v-bind="col1" />
+        </div>
+        <hr>
+        <div>
+            <detailed-collection v-bind="col2" />
+        </div>
     </div>
     <script>
         var themes = window["ca-viz"].themes;
@@ -24,16 +35,45 @@
             el: '#example-figure',
             components: {
                 fig: components.Figure,
+                SimpleCollection: components.SimpleCollection,
+                DetailedCollection: components.DetailedCollection,
             },
             data: {
                 fig1: {
-                    theme: themes.classic,
+                    data: getData(10),
                     title: 'A simple Figure',
                     caption: {
                         name: 'Figure 1',
-                        info: 'abc',
+                        info: Lorem.getParagraph(),
                     },
-                    data: getData(7),
+                },
+                col1: {
+                    title: 'A simple collection',
+                    figures: Array.apply(null, {length: 10}).map(_ => getData(10)),
+                    caption: {
+                        name: 'Figure 2',
+                        info: Lorem.getParagraph(),
+                    },
+                    theme: Object.assign({}, themes.classic, {
+                        cellSize: 10,
+                        borderWidth: 2,
+                    })
+                },
+                col2: {
+                    title: 'A detailed collection',
+                    figures: [{
+                        data: getData(10),
+                        meta: {
+                            name: 'Figure 3.a',
+                            info: Lorem.getParagraph(),
+                        },
+                    }, {
+                        data: getData(10),
+                        meta: {
+                            name: 'Figure 3.b',
+                            info: Lorem.getParagraph(),
+                        },
+                    }],
                 },
             },
         });
@@ -51,6 +91,18 @@
 
             return data;
         }
+
+        // function getFig(title, num) {
+        //     return {
+        //         theme: themes.classic,
+        //         title: title,
+        //         caption: {
+        //             name: 'Figure ' + num.toString(),
+        //             info: Lorem.getParagraph(),
+        //         },
+        //         data: getData(10),
+        //     };
+        // }
     </script>
 </body>
 </html>

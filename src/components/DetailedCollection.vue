@@ -3,7 +3,7 @@
     .colhead: FigureHeader(v-bind:title="title")
     .colviz: .colfig(v-for="figure in figures")
       Grid(v-bind:data="figure.data", v-bind:theme="theme")
-      FigureCaption(v-bind="figure.caption")
+      FigureCaption(v-bind="figure.meta")
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -28,3 +28,11 @@ export default class DetailedCollection extends Vue {
   @Prop() private theme?: Theme;
 }
 </script>
+<style lang="stylus" scoped>
+.colviz
+  display flex
+  flex-flow row wrap
+
+  .colfig
+    flex 1 1 0
+</style>

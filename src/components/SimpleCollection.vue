@@ -29,3 +29,8 @@ export default class SimpleCollection extends Vue {
   @Prop() private theme?: Theme;
 }
 </script>
+<style lang="stylus" scoped>
+.colviz
+  display flex
+  flex-flow row wrap
+</style>

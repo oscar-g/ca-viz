@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
-    "build": "vue-cli-service build --target lib src/index.ts",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
