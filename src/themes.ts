@@ -15,11 +15,11 @@ const classic: Theme = {
   cellSize: 16,
   cellColor: {
     0: '#fff',
-    1: '#000',
+    1: '#222',
   },
-  gridlineColor: '#000',
-  borderWidth: 5,
-  borderColor: '#000',
+  gridlineColor: '#ddd',
+  borderWidth: 3,
+  borderColor: '#aaa',
 };
 
 export default { classic, rgb };
