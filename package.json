@@ -7,7 +7,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "docs": "npm run build && mv dist/ca-viz.umd.min.js docs/ && mv dist/ca-viz.css docs/ && npx git-cz",
+    "docs": "npm run build && mv dist/ca-viz.umd.min.js docs/ && mv dist/ca-viz.css docs/ && git add docs && npx git-cz",
     "release": "semantic-release -d"
   },
   "private": true,
