@@ -6,7 +6,9 @@
     "build": "vue-cli-service build --target lib src/main.ts && tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "docs": "npm run build && mv dist/ca-viz.umd.min.js docs/ && mv dist/ca-viz.css docs/ && npx git-cz",
+    "release": "semantic-release -d"
   },
   "private": true,
   "author": {
@@ -38,6 +40,7 @@
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
+    "semantic-release": "^15.9.12",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-node": "^6.1.0",
