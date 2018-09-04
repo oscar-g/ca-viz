@@ -6,4 +6,4 @@ export {
   Figure,
   SimpleCollection,
   DetailedCollection,
-}
+};

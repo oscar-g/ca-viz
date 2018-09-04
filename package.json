@@ -1,6 +1,6 @@
 {
   "name": "@oscar-g/cell-viz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
     "build": "vue-cli-service build --target lib src/main.ts && tsc --emitDeclarationOnly",
@@ -11,6 +11,9 @@
     "release": "semantic-release"
   },
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Oscar Gonzalez",
     "email": "contact@oscargonzalez.us"
