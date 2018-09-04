@@ -1,6 +1,6 @@
 {
-  "name": "cell-viz",
-  "version": "0.0.2",
+  "name": "@oscar-g/cell-viz",
+  "version": "1.0.0",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
     "build": "vue-cli-service build --target lib src/main.ts && tsc --emitDeclarationOnly",
@@ -8,9 +8,9 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "docs": "npm run build && mv dist/ca-viz.umd.min.js docs/ && mv dist/ca-viz.css docs/ && git add docs && git-cz",
-    "release": "semantic-release -d"
+    "release": "semantic-release"
   },
-  "private": true,
+  "private": false,
   "author": {
     "name": "Oscar Gonzalez",
     "email": "contact@oscargonzalez.us"
