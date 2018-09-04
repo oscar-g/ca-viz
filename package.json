@@ -1,6 +1,6 @@
 {
   "name": "@oscar-g/cell-viz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
     "build": "vue-cli-service build --target lib src/main.ts && tsc --emitDeclarationOnly",
@@ -32,6 +32,7 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@semantic-release/git": "^7.0.3",
     "@types/chai": "^4.1.0",
     "@types/mocha": "^5.2.4",
     "@vue/cli-plugin-e2e-cypress": "^3.0.1",
