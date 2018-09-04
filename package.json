@@ -1,5 +1,5 @@
 {
-  "name": "ca-viz",
+  "name": "cell-viz",
   "version": "0.0.2",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
@@ -20,8 +20,8 @@
     "src",
     "dist"
   ],
-  "main": "dist/ca-viz.common.js",
-  "typings": "dist/main.d.ts",
+  "main": "dist/cell-viz.common.js",
+  "typings": "dist/src/main.d.ts",
   "dependencies": {
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
