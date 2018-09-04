@@ -1,4 +1,9 @@
-import themes from './themes';
-import components from './components';
+import Figure from './components/Figure.vue';
+import SimpleCollection from './components/SimpleCollection.vue';
+import DetailedCollection from './components/DetailedCollection.vue';
 
-export { themes, components };
+export {
+  Figure,
+  SimpleCollection,
+  DetailedCollection,
+}
