@@ -1,6 +1,6 @@
 {
   "name": "@oscar-g/cell-viz",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue components to render 2D cellular automata and associated metadata.",
   "scripts": {
     "build": "vue-cli-service build --target lib src/main.ts && tsc --emitDeclarationOnly",
